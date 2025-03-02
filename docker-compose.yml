@@ -1,0 +1,14 @@
+services:
+  app:
+    image: node:22-alpine
+    container_name: project-name-app
+    working_dir: /app
+    ports:
+      - '3000:3000'
+    tty: true
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+volumes:
+  node_modules:
+    name: project-name-app-node-modules
